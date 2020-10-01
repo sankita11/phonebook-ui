@@ -1,4 +1,6 @@
 import React from 'react';
+import Config from '../config/config';
+
 
 class ListItem extends React.Component {
 
@@ -20,7 +22,7 @@ class ListItem extends React.Component {
 
       event.target.parentNode.remove();
 
-      fetch('http://localhost:3006/contact/delete/' + this.id , {
+      fetch(Config.apiUrl + 'contact/delete/' + this.id , {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -39,7 +41,7 @@ class ListItem extends React.Component {
     event.preventDefault();
     const formData = this.state.formData ;
 
-    fetch('http://localhost:3006/contact/update/' + this.id , {
+    fetch( Config.apiUrl + 'contact/update/' + this.id , {
       method: 'POST',
       credentials: 'include',
       headers: {

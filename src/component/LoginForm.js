@@ -3,6 +3,8 @@ import React from 'react';
 import firebase from '../services/firebase';
 import ContactComponent from './Contacts';
 
+import Config from '../config/config';
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,7 @@ class LoginForm extends React.Component {
     .then((data) => {
         console.log(data);
 
-        fetch('http://localhost:3006/login/', {
+        fetch(Config.apiUrl + 'login/', {
             method: 'POST',
             credentials: 'include',
             headers: {

@@ -1,6 +1,7 @@
 import React  from 'react'
 import ListItem from './ListItem';
 import ContactForm from './ContactForm';
+import Config from '../config/config';
 
 class ContactComponent extends React.Component {
 
@@ -16,7 +17,7 @@ class ContactComponent extends React.Component {
 
     componentDidMount() {
         this._isMounted = true;
-        fetch( 'http://localhost:3006/contacts/', {
+        fetch( Config.apiUrl + 'contacts/', {
             credentials: 'include',
         } ).then( (response) => response.json()).then((json) => {
             console.log(this._isMounted);

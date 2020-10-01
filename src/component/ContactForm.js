@@ -1,4 +1,5 @@
 import React from 'react';
+import Config from '../config/config';
 
 
 class ContactForm extends React.Component {
@@ -26,7 +27,7 @@ class ContactForm extends React.Component {
         const formData = this.state.formData;
 
 
-        fetch('http://localhost:3006/create', {
+        fetch(Config.apiUrl + 'create', {
             method: 'POST',
             credentials: 'include',
             headers: {
